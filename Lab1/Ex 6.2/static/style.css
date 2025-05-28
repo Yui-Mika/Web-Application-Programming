@@ -1,0 +1,84 @@
+/* === Import fonts === */
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Poppins:wght@600&display=swap');
+body {
+    font-family: 'Patrick Hand', cursive; /* Handwritten style font */
+    background-color: #fff0f7; /* Light pink background */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 30px;
+    background-color: #ffffff; /* White background for the container */
+    /*border: 3px dashed #e6ccff;  Light blue dashed border */
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Soft shadow for depth */
+    
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.4rem;
+    color: #9933ff;
+    text-align: center;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.emoji {
+  display: inline-block;
+  animation: bounce 1.2s infinite;
+}
+
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-6px); }
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px 15px;
+    vertical-align: top;
+}
+
+th {
+    width: 35%;
+    background: #e6ccff;
+    color: #fff;
+    text-align: left;
+    border-radius: 8px 0 0 8px;
+}
+
+td {
+    background: #faf5ff;
+    color: #333;
+    border-radius: 0 8px 8px 0;
+    border-bottom: 1px solid #eee;
+}
+tr:nth-child(even) td {
+    background: #f5f0ff;
+}
+
+.hobby-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+.hobby-list li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+.hobby-list li::before {
+    content: "💖";
+    position: absolute;
+    left: 0;
+    top: 2px;
+}

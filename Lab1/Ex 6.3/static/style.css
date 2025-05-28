@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    margin: 0; padding: 0;
+}
+
+.container {
+    max-width: 500px;
+    margin: 40px auto;
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 25px 30px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #007acc;
+    margin-bottom: 25px;
+}
+
+form label {
+    font-weight: bold;
+    color: #333;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[list] {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1.5px solid #007acc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+/* for color picker only: keep default, or just customize lightly */
+form input[type="color"] {
+  /* width: auto;  keep the default size */
+  padding: 0;      /* remove excess padding */
+  border: none;    /* small border */
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+form input[type="radio"],
+form input[type="checkbox"] {
+    margin-right: 6px;
+    cursor: pointer;
+}
+
+form input[type="submit"] {
+    background-color: #007acc;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #005f99;
+}
+
+.result {
+    margin-top: 30px;
+    padding: 15px 20px;
+    background: #e6f0fa;
+    border: 1px solid #a3c1f7;
+    border-radius: 10px;
+}
+
+.result ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.result li {
+    margin-bottom: 8px;
+}

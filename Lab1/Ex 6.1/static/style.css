@@ -1,0 +1,55 @@
+/* Style for the HTML page */
+body {
+    margin : 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #fff0f5;
+}
+
+.container {
+    max-width: 600px;
+    margin: 80px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border: 3px dashed #ffb6c1;
+    border-radius: 20px;
+    box-shadow: 0 8px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    color: #fc8ec5;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif; 
+    font-size: 2.5rem;
+    position: relative;
+}
+
+.emoji {
+  display: inline-block;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-5px); }
+}
+
+.equation,
+.result {
+  display: inline-block;
+  background: #ffe6f7;                    /* pastel lavender */
+  padding: 12px 18px;
+  border-radius: 12px;
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.equation {
+  border: 2px solid #ff99cc;
+}
+
+.result {
+  border: 2px solid #fc8ec5;
+}

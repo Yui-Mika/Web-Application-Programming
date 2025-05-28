@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">   
+    <head>
+        <meta charset="UTF-8">
+        <title>Student Information</title>
+        <!-- Google Fonts: Patrick Hand & Poppins -->
+        <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Poppins:wght@600&display=swap" rel="stylesheet">
+        <link rel='stylesheet' href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Student Information <span class="emoji">🎀</span></h1>
+            <table>
+                <tr><th>Name:</th><td>{{ student.name }}</td></tr>
+                <tr><th>Student ID:</th><td>{{ student.student_id}}</td></tr>
+                <tr><th>Academic Year:</th><td>{{ student.academic_year }}</td></tr>
+                <tr><th>Major:</th><td>{{ student.major }}</td></tr>
+                <tr>
+                    <th>Hobbies</th>
+                    <td>
+                        <ul class="hobby-list">
+                            {% for hobby in student.hobbies %}
+                                <li>{{ hobby }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
