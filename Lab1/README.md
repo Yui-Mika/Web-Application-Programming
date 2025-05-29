@@ -1,4 +1,5 @@
 RESULT:
+
 6. Practical Exercises
    
    6.1 Exercise 1: Create a Website Displaying a Linear Equation
