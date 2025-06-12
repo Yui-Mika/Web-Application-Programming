@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Flower Purchase Registration</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .container {
+            width: 480px;
+            margin: 40px auto;
+        }
+
+        .title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .red {
+            color: #d13b2a;
+            margin-bottom: 14px;
+            text-align: left;
+        }
+
+        label {
+            display: inline-block;
+            width: 105px;
+            margin-bottom: 7px;
+        }
+
+        .required {
+            color: #d13b2a;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="email"], textarea, select {
+            width: 120px;
+            box-sizing: border-box;
+            margin-bottom: 7px;
+            padding: 3px 5px;
+             margin-right: 10px;
+        }
+
+        textarea {
+            width: 320px;
+            height: 60px;
+            margin-top: 6px;
+        }
+
+        .row {
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+        }
+
+        .note-label {
+            vertical-align: top;
+        }
+
+        form {
+            margin-left: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">FLOWER PURCHASE REGISTRATION</div>
+        <div class="red" style="font-size: 1rem;">
+            Please fill in all required information to receive your favorite flowers or ornamental plants.
+        </div>
+        <form>
+            <div class="row">
+                <label>Full name: <span class="required">( * )</span></label>
+                <input type="text" required>
+            </div>
+            <div class ="row">
+                <label>Address: <span class="required">( * )</span></label>
+                <input type="text" required>
+            </div>
+            <div class="row">
+                <label>Phone: <span class="required">( * )</span></label>
+                <input type="text" required>
+            </div>
+            <div class="row">
+                <label>Email:</label>
+                <input type="email">
+            </div>
+            <div class="row">
+                <label>Flower:</label>
+                <select>
+                    <option>Rose</option>
+                    <option>Tulip</option>
+                    <option>Lily</option>
+                    <option>Hydrangea</option>
+                    <option>Orchid</option>
+                </select>
+                <select>
+                    <option>Red</option>
+                    <option>Yellow</option>
+                    <option>White</option>
+                    <option>Blue</option>
+                    <option>Pink</option>
+                </select>
+            </div>
+            <div class="row">
+                <label>Quantity: <span class="required">( * )</span></label>
+                <input type="text" required>
+            </div>
+            <div class="row">
+                <label>Unit:</label>
+                <input type="radio" name="unit" id="branch"><label for="branch" style="width: auto;">Branch</label>
+                <input type="radio" name="unit" id="pot"><label for="pot" style="width: auto;">Pot</label>
+            </div>
+            <div class="row">
+                <label>Payment:</label>
+                <input type="radio" name="payment" id="cash"><label for="cash" style="width: auto;">Cash</label>
+                <input type="radio" name="payment" id="transfer"><label for="transfer" style="width: auto;">Bank Transfer</label>
+                <input type="radio" name="payment" id="card"><label for="card" style="width: auto;">MasterCard</label> 
+            </div>
+            <div class="row">
+                <label class="note-label">Notes:</label>
+                <textarea></textarea>
+            </div>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
+    </div>
+</body>
+</html>

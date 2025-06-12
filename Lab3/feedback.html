@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Feedback</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+        }
+
+        .form-table {
+            margin: 40px auto 0 auto;
+        }
+
+        .label-red {
+            color: #d13b2a;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        input[type="text"], textarea {
+            width: 300px;
+            border: 1.5px solid #6a90b4;
+            padding: 5px;
+            margin-bottom: 18px;
+            border-radius: 2px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        textarea {
+            height: 70px;
+            resize: vertical;
+        }
+
+        h2 {
+            margin-top: 36px;
+            margin-bottom: 28px;
+            font-size: 1.35rem;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>CONTRIBUTION</h2>
+    <form>
+        <table class="form-table">
+            <tr>
+                <td class="label-red">Full Name:</td>
+            </tr>
+            <tr>
+                <td><input type ="text" placeholder="Enter the full name"></td>
+            </tr>
+            <tr>
+                <td class="label-red">Contribution Content:</td>
+            </tr>
+            <tr>
+                <td>
+                    <textarea placeholder="Enter your contribution"></textarea>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

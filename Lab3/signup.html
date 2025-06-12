@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>REGISTRATION FORM</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .signup-container {
+            width: 380px;
+            margin: 32px auto;
+        }
+
+        .signup-title {
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: inline block;
+            margin-bottom: 4px;
+            margin-top: 8px;
+        }
+
+        .required {
+            color: red;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="email"], input[type="number"], textarea {
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 7px;
+            padding: 4px 5px;
+        }
+
+        select {
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        textarea {
+            min-height: 50px;
+            resize: vertical;
+        }
+
+        .bth-row {
+            margin-top: 12px;
+        }
+
+        input[type="submit"], input[type="reset"] {
+            padding: 6px 18px;
+            font-size: 1rem;
+            margin-right: 7px;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <div class="signup-title">REGISTRATION FORM</div>
+        <form>
+            <label for="fullname">Full Name: <span class="required">( * )</span></label>
+            <input type="text" id="fullname" name="fullname" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address">
+
+            <label for="email">Email: <span class="required">( * )</span></label>
+            <input type="email" id="email" name="email" required>
+
+            <label>Gender:</label>
+            <input type="radio" id ="male" name="gender" value="male">
+            <label for="male" style="display: inline;">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female" style="display: inline;">Female</label>
+
+            <br>
+
+            <label for="age">Age: <span class="required">( * )</span></label>
+            <input type="number" id="age" name="age" required min="1" max="150">
+
+            <label>Hobbies:</label>
+            <input type="checkbox" id="sports"><label for="sports" style="display: inline;"> Sports</label><br>
+            <input type="checkbox" id="literature"><label for="literature" style="display: inline;"> Literature</label><br>
+            <input type="checkbox" id="it"><label for="it" style="display: inline;"> Information Technology</label><br>
+            <input type="checkbox" id="history"><label for="history" style="display: inline;"> History</label><br>
+            <input type="checkbox" id="games"><label for="games" style="display: inline;"> Games</label><br>
+
+            <label for="major">Major:</label>
+            <select id="major" name="major">
+                <option>Web Technology</option>
+                <option>Information Systems</option>
+                <option>Software Engineering</option>
+                <option>Cyber Security</option>
+                <option>Data Science</option>
+            </select>
+            <br>
+
+            <label for="image">Upload image:</label>
+            <input type="file" id="image" name="image"><br>
+
+            <label for="request">Request:</label><br>
+            <textarea id="request" name="request"></textarea>
+
+            <div class="btn-row">
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

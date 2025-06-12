@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Feedback Survey Form</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background: #fff;
+        }
+
+        .survey-container {
+            width: 380px;
+            margin: 30px auto;
+            border: 1px solid #444;
+            background: #fff;
+        }
+
+        .survey-title {
+            text-align: left;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 18px 0 14px 18px;
+            letter-spacing: 1px;
+        }
+
+        .survey-form {
+            width: 89%;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 3px;
+            text-align: left;
+        }
+
+        .survey-form input[type="text"] {
+            width: 100%;
+            padding: 6px 7px;
+            border: 1.5px solid #366085;
+            border-radius: 2px;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+
+        .radio-group, .checkbox-group {
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .radio-group label, .checkbox-group label {
+            font-weight: normal;
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        .checkbox-group {
+            margin-top: 6px;
+            margin-bottom: 16px;
+        }
+
+        .button-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .survey-form input[type="submit"],
+        .survey-form input[type="reset"] {
+            width: 48%;
+            background: #366085;
+            color: #fff;
+            border: none;
+            padding: 10px 0;
+            border-radius: 2px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: background 0.2s;
+        }
+
+        .survey-form input[type="submit"]:hover,
+        .survey-form input[type="reset"]:hover {
+            background: #223c5c;
+        }
+    </style>
+</head>
+<body>
+    <div class="survey-container">
+        <h2 class="survey-title">FEEDBACK SURVEY FORM</h2>
+        <form class="survey-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter your username">
+
+            <label>Gender:</label>
+            <div class="radio-group">
+                <input type="radio" id="male" name="gender">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender">
+                <label for="female">Female</label>
+            </div>
+
+            <label> Topics you often care about on the Internet:</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="news"><label for="news">News</label><br>
+                <input type="checkbox" id="entertainment"><label for="entertainment">Entertainment</label><br>
+                <input type="checkbox" id="learning"><label for="learning">Learning Corner</label><br>
+                <input type="checkbox" id="education"><label for="education">Education</label><br>
+                <input type="checkbox" id="other"><label for="other">Other Topics</label>
+            </div>
+
+            <div class="button-row">
+                <input type="reset" value="Cancel">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register Account</title>
+    <style>
+        body {
+            font-family: "Times New Roman", 'Times New Roman', Times, serif;
+            background: #fff;
+        }
+
+        .register-container {
+            width: 380px;
+            margin: 30px auto;
+            border: 1px solid #ddd;
+            padding: 0 0 18px 0;
+            background: #fff;
+        }
+
+        .register-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 30px 0 16px 0;
+            letter-spacing: 1px;
+        }
+
+        .register-form label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 3px;
+            margin-top: 12px;
+            text-align: left;
+        }
+
+        .register-form input[type="text"],
+        .register-form input[type="password"],
+        .register-form input[type="email"],
+        .register-form input[type="date"],
+        .register-form select,
+        .register-form textarea {
+            width: 100%;
+            padding: 6px 7px;
+            border: 1.5px solid #366085;
+            border-radius: 2px;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+
+        .row-flex {
+            display: flex;
+            gap: 10px;
+        }
+
+        .row-flex > div {
+            flex: 1;
+        }
+
+        .checkbox-group {
+            margin-bottom: 8px;
+        }
+
+        .checkbox-group label {
+            font-weight: normal;
+            margin-left: 4px;
+            display: inline-block;
+        }
+
+        .register-form textarea {
+            min-height: 60px;
+            resize: vertical;
+        }
+
+        .button-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 14px;
+        }
+        
+        .register-form input[type="submit"],
+        .register-form input[type="reset"] {
+            width: 49%;
+            background: #366085;
+            color: #fff;
+            border: none;
+            padding: 10px 0;
+            border-radius: 2px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: background 0.2s;
+        }
+
+        .register-form input[type="submit"]:hover,
+        .register-form input[type ="reset"]:hover {
+            background: #223c5c;
+        }
+    </style>
+</head>
+<body>
+    <div class ="register-container">
+        <div class ="register-title"; style="text-align: left;">REGISTER ACCOUNT</div>
+        <form class="register-form">
+            <label for="username">Enter username</label>
+            <input type="text" id="username" placeholder="Enter username">
+            
+            <label for="password">Enter password</label>
+            <input type="password" id="password" placeholder="Enter password">
+
+            <label for="email">Enter email address</label>
+            <input type="email" id="email" placeholder="Enter email address">
+
+            <div class="row-flex">
+                <div>
+                    <label for="dob">Date of birth</label>
+                    <input type="date" id="dob">
+                </div>
+                <div>
+                    <label for="gender">Gender</label>
+                    <select id="gender">
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div style="margin-top: 10px;  text-align: left;">Hobbies</div>
+            <div class ="checkbox-group" style="text-align:left">
+                <input type="checkbox" id="hobby1"><label for="hobby1">Watching movies</label><br>
+                <input type="checkbox" id="hobby2"><label for="hobby2">Listening a music</label><br>
+                <input type="checkbox" id="hobby3"><label for="hobby3">Reading books</label><br>
+                <input type="checkbox" id="hobby4"><label for="hobby4">Travelling</label><br>
+            </div>
+
+            <label for="intro">Introduce yourself</label>
+            <textarea id="intro" placeholder="Tell us about yourself...."></textarea>
+
+            <div class="button-row">
+                <input type ="reset" value="Cancel">
+                <input type="submit" value="Register">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
