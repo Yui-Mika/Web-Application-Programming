@@ -1,0 +1,9 @@
+/* DO NOT use !important */
+.alert {
+    color: red;
+    font-weight: bold;
+}
+/* If you want to prioritize, choose a strong enough selector */
+.message .alert {
+    color: orange;
+}

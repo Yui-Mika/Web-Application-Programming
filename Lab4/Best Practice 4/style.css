@@ -1,0 +1,5 @@
+.card { padding: 20px; border-radius: 8px; border: 1px solid #bbb; }
+.card--featured {border: 2px solid orange; }
+.card__title { font-size: 1.3rem; margin-bottom: 10px; }
+.card__ title--primary { color: #1976d2; }
+.card__desc { color: #444; }

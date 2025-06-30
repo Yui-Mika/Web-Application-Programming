@@ -1,0 +1,22 @@
+/* Header styles */
+.header {
+    background: #333;
+    color: #fff;
+    padding: 12px;
+    text-align: center;
+}
+
+.header-logo {
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+
+/* Button Styles */
+.button-primary {
+    background: #1976d2;
+    color: #fff;
+    border: none;
+    padding: 7px 16px;
+    border-radius: 4px;
+    margin-top: 14px;
+}

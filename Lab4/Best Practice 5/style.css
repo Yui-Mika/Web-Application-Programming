@@ -1,0 +1,5 @@
+/* Simple selector */
+.nav-item.active {
+    color: orange;
+    font-weight: bold;
+}
