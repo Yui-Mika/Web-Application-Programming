@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        .cart-list {margin: 0; padding: 0; list-style: none; }
+        .cart-list li {margin-bottom: 5px; }
+        .cart-btn { margin-left: 7px; }
+    </style>
+</head>
+<body>
+    <h2>Shopping Cart</h2>
+    <ul id="productList">
+        <li>Apple ($2) <button class="cart-btn" onclick="addToCart('Apple', 2)">Add</button></li>
+        <li>Orange ($3) <button class="cart-btn" onclick="addToCart('Orange', 3)">Add</button></li>
+        <li>Banana ($1) <button class="cart-btn" onclick="addToCart('Banana', 1)">Add</button></li>
+    </ul>
+    <h3>Your Cart:</h3>
+    <ul id="cart" class="cart-list"></ul>
+    <div id="total"></div>
+    <script src="cart.js"></script>
+</body>
+</html>

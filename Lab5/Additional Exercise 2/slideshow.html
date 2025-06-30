@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow</title>
+    <style>
+        #slideshow { width: 300px; height: 200px; object-fit: cover; border: 1px solid #ccc;}
+        .slide-btn { margin: 10px 4px; }
+    </style>
+</head>
+<body>
+    <h2>Slideshow</h2>
+    <img id="slideshow" src="https://picsum.photos/id/237/300/200" alt="slide">
+    <div>
+        <button class="slide-btn" onclick="prevImg()">Prev</button>
+        <button class="slide-btn" onclick="nextImg()">Next</button>
+    </div>
+    <script src="slideshow.js"></script>
+</body>
+</html>

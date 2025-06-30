@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        .calc-input { width: 60px; }
+        button { margin: 0 5px; }
+    </style>
+</head>
+<body>
+    <h2>Simple Calculator</h2>
+    <input class="calc-input" id="num1" type="number" placeholder="Num1">
+    <input class="calc-input" id="num2" type="number" placeholder="Num2">
+    <button onclick="calculate('+')">+</button>
+    <button onclick="calculate('-')">-</button>
+    <button onclick="calculate('*')">*</button>
+    <button onclick="calculate('/')">/</button>
+    <div id="result" style="margin-top: 10px; font-weight: bold;"></div>
+    <script src="calculator.js"></script>
+</body>
+</html>
