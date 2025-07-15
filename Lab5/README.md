@@ -1,5 +1,5 @@
 English:
-If you need to see the printed results of the exercises, click on the file name: DuongNgocLinhDan_Lab6_result
+If you need to see the printed results of the exercises, click on the file name: DuongNgocLinhDan_Lab5_result
 
 -------------------------
 
