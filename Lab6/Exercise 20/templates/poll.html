@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poll</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 400px;
+        }
+        h1 {
+            color: #6c4dbf;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        input[type="submit"] {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #ffb3b3, #6c4dbf);
+            color: white;
+            font-weight: bold;
+            font-size: 1.15em;
+            letter-spacing: 1px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(44,62,80,0.05);
+            transition: background 0.3s;
+        }
+        input[type="submit"]:hover {
+            background: linear-gradient(90deg, #ff809d, #5b3db1);
+        }
+        .result {
+            font-size: 1.3em;
+            color: #333;
+            margin-top: 20px;
+        }
+        .result span {
+            font-weight: bold;
+        }
+        .back-link {
+            font-size: 1.1em;
+            margin-top: 20px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Vote for Your Favorite Animal!</h1>
+
+    <!-- Form bình chọn -->
+    <form method="POST">
+        <label>
+            <input type="radio" name="vote" value="Cats" required> Cats
+        </label>
+        <label>
+            <input type="radio" name="vote" value="Dogs" required> Dogs
+        </label>
+        <input type="submit" value="Vote">
+    </form>
+
+    {% if results %}
+        <div class="result">
+            <p><span>Cats:</span> {{ (votes['Cats'] / (votes['Cats'] + votes['Dogs'])) * 100 }}%</p>
+            <p><span>Dogs:</span> {{ (votes['Dogs'] / (votes['Cats'] + votes['Dogs'])) * 100 }}%</p>
+        </div>
+    {% endif %}
+
+    <a href="/poll" class="back-link">Go Back and Vote Again</a>
+</div>
+
+</body>
+</html>

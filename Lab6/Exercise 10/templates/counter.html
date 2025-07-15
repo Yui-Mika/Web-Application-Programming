@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Visit Counter</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 350px;
+        }
+        h1 {
+            color: #f74382;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.3em;
+            color: #333;
+        }
+        .count {
+            font-size: 3em;
+            font-weight: bold;
+            color: #FF5733;
+            margin: 20px 0;
+        }
+        button {
+            padding: 12px 20px;
+            background-color: #ff6ead;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.15em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #fa2372;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Page Visit Counter</h1>
+    <p>You are visitor number:</p>
+    <p class="count">{{ count }}</p>
+    <button onclick="location.reload();">Refresh to Increase Counter</button>
+</div>
+
+</body>
+</html>

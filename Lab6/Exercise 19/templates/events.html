@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event List</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 400px;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #6c4dbf;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+        input[type="text"], input[type="date"] {
+            padding: 12px;
+            border: 2px solid #e2e2e2;
+            border-radius: 8px;
+            font-size: 1.1em;
+            width: 93%;
+            transition: border 0.3s;
+        }
+        input[type="text"]:focus, input[type="date"]:focus {
+            border-color: #6c4dbf;
+            outline: none;
+        }
+        input[type="submit"] {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #ffb3b3, #6c4dbf); /* Màu pastel hồng và tím */
+            color: white;
+            font-weight: bold;
+            font-size: 1.15em;
+            letter-spacing: 1px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(44,62,80,0.05);
+            transition: background 0.3s;
+        }
+        input[type="submit"]:hover {
+            background: linear-gradient(90deg, #ff809d, #5b3db1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table th, table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        table th {
+            background-color: #f0f8ff;
+            color: #333;
+        }
+        table tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Event List</h1>
+
+    <!-- Form to add event -->
+    <form method="POST" autocomplete="off">
+        <input type="text" name="event_name" placeholder="Event Name" required>
+        <input type="date" name="event_date" required>
+        <input type="submit" value="Add Event">
+    </form>
+
+    <h2>Upcoming Events:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Event</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for event in events %}
+                <tr>
+                    <td>{{ event.name }}</td>
+                    <td>{{ event.date }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

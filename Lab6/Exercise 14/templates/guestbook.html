@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guestbook</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 350px;
+            max-width: 80%;
+        }
+        h1 {
+            font-size: 2.2em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+        input[type="text"], textarea {
+            padding: 5px;
+            border: 2px solid #e2e2e2;
+            border-radius: 8px;
+            font-size: 1.1em;
+            width: 100%;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        input[type="submit"] {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #4e74c1, #2a56a8);
+            color: white;
+            font-weight: bold;
+            font-size: 1.15em;
+            letter-spacing: 1px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(44,62,80,0.05);
+            transition: background 0.2s;
+        }
+        input[type="submit"]:hover {
+            background: linear-gradient(90deg, #3b5d91, #2a56a8); 
+        }
+        ul.entry-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 30px;
+            text-align: left;
+        }
+        .entry-list-item {
+            background: #f0fbff;
+            margin-bottom: 12px;
+            padding: 10px 14px;
+            border-radius: 7px;
+            font-size: 1.07em;
+            color: #222;
+            box-shadow: 0 1px 2px rgba(44,62,80,0.04);
+        }
+        .entry-list-item strong {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Guestbook</h1>
+
+    <!-- Form để thêm entry mới -->
+    <form method="POST" autocomplete="off">
+        <input type="text" name="name" placeholder="Enter your name" required>
+        <textarea name="message" placeholder="Enter your message" required></textarea>
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- Hiển thị các entry trong guestbook -->
+    <h2>Entries:</h2>
+    <ul class="entry-list">
+        {% for entry in entries %}
+            <li class="entry-list-item">
+                <strong>{{ entry.name }}:</strong> {{ entry.message }}
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+</body>
+</html>

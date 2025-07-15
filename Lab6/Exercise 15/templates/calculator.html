@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 350px;
+        }
+        h1 {
+            font-size: 2.2em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        input[type="text"], input[type="number"], select {
+            padding: 5px;
+            border: 2px solid #e2e2e2;
+            border-radius: 8px;
+            font-size: 1.1em;
+            width: 100%;
+            margin-bottom: 16px;
+        }
+        input[type="submit"] {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #3ec6e0, #56e39f);
+            color: white;
+            font-weight: bold;
+            font-size: 1.15em;
+            letter-spacing: 1px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(44,62,80,0.05);
+            transition: background 0.2s;
+        }
+        input[type="submit"]:hover {
+            background: linear-gradient(90deg, #2596be, #56e39f);
+        }
+        .result {
+            font-size: 1.3em;
+            color: #333;
+            margin-top: 20px;
+        }
+        .error {
+            color: red;
+            font-style: italic;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Simple Calculator</h1>
+
+    <form method="POST">
+        <input type="number" name="num1" placeholder="Enter first number" required>
+        <input type="number" name="num2" placeholder="Enter second number" required>
+        
+        <select name="operation" required>
+            <option value="add">+</option>
+            <option value="subtract">-</option>
+            <option value="multiply">*</option>
+            <option value="divide">/</option>
+        </select>
+
+        <input type="submit" value="Calculate">
+    </form>
+
+    {% if result is not none %}
+        <div class="result">
+            <p>Result: {{ result }}</p>
+        </div>
+    {% endif %}
+
+    {% if error_message %}
+        <div class="error">
+            <p>{{ error_message }}</p>
+        </div>
+    {% endif %}
+</div>
+
+</body>
+</html>

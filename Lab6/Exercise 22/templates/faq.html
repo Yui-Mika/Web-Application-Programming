@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 400px;
+        }
+        h1 {
+            color: #6c4dbf;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .content {
+            font-size: 1.2em;
+            color: #555;
+            margin-top: 20px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            font-size: 1.1em;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Frequently Asked Question</h1>
+
+    <h2>{{ question }}</h2>
+    <p class="content">{{ answer }}</p>
+
+    <a href="/faq/1" class="back-link">Go to the First Question</a>
+    <a href="/faq/2" class="back-link">Go to the Second Question</a>
+    <a href="/faq/3" class="back-link">Go to the Third Question</a>
+</div>
+
+</body>
+</html>

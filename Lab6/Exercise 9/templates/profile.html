@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .admin-message {
+            color: #ff6347;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+        .user-message {
+            color: #28a745;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+        .profile-info {
+            margin-top: 30px;
+            font-size: 1.1em;
+            color: #555;
+        }
+        .btn {
+            padding: 12px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Welcome to Your Profile!</h1>
+
+    {% if admin %}
+        <p class="admin-message">Hello Admin, you have special access!</p>
+    {% else %}
+        <p class="user-message">Welcome to your profile, {{ username }}!</p>
+    {% endif %}
+
+    <div class="profile-info">
+        <p>Username: {{ username }}</p>
+        <p>Email: {{ username }}@example.com</p>
+    </div>
+
+    <button class="btn" onclick="alert('Thanks for visiting!')">Click Here</button>
+</div>
+
+</body>
+</html>
