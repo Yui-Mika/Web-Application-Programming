@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filter by Gender</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Style.css') }}">
+</head>
+<body>
+<div class="form-container">
+    <h2>🚻 Filter Students by Gender</h2>
+    <form method="GET" action="{{ url_for('exercise16') }}">
+        <select name="gender" required>
+            <option value="" disabled selected>Select gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+        <button type="submit" class="search-button">Filter 🚻</button>
+    </form>
+</div>
+
+{% if students %}
+      <table class="result-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Major</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for student in students %}
+          <tr>
+            <td>{{ student.name }}</td>
+            <td>{{ student.age }}</td>
+            <td>{{ student.gender }}</td>
+            <td>{{ student.major }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endif %}
+
+    <div style="text-align:center; margin-top: 20px;">
+        <a href="{{ url_for('exercise3') }}" class="back-link">← Back to Student List</a>
+    </div>
+</body>
+</html>

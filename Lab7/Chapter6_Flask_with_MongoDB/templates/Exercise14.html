@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Top Student</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='Style.css') }}">
+  <style>
+    .top-container {
+        max-width: 500px;
+        margin: 80px auto;
+        background: #fff5fb;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        text-align: center;
+    }
+    .top-container h2 {
+        color: #ff3399;
+    }
+    .top-container p {
+        font-size: 20px;
+        font-weight: bold;
+        margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-container">
+    <h2>🏆 Top-Scoring Student</h2>
+    {% if student %}
+      <p>Name: {{ student.name }}</p>
+      <p>GPA: {{ student.gpa }}</p>
+    {% else %}
+      <p>No student found.</p>
+    {% endif %}
+
+    <div style="text-align:center; margin-top: 20px;">
+        <a href="{{ url_for('exercise3') }}" class="back-link">← Back to Student List</a>
+    </div>
+  </div>
+</body>
+</html>

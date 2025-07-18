@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filter by Major</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Style.css') }}">
+</head>
+<body>
+<div class="form-container">
+    <h2>🎓 Filter by Major</h2>
+    <form method="get" action="{{ url_for('exercise8') }}">
+        <select name="major" class="dropdown">
+            <option value="">-- Select a major --</option>
+            {% for major in majors %}
+                <option value="{{ major }}" {% if major == selected_major %}selected{% endif %}>{{ major }}</option>
+            {% endfor %}
+        </select>
+        <button class="search-button" type="submit">Filter 🔍</button>
+    </form>
+
+    {% if students %}
+      <table class="result-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Major</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for student in students %}
+          <tr>
+            <td>{{ student.name }}</td>
+            <td>{{ student.age }}</td>
+            <td>{{ student.gender }}</td>
+            <td>{{ student.major }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% elif query %}
+      <p style="text-align:center;">No results found for "{{ query }}" 😢</p>
+    {% endif %}
+    
+        <div style="text-align:center; margin-top: 20px;">
+            <a href="{{ url_for('exercise3') }}" class="back-link">← Back to Student List</a>
+        </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Student</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='Style.css') }}">
+</head>
+<body>
+  <div class="form-container">
+    <h2>🔍 Search Student</h2>
+    <form action="{{ url_for('exercise6') }}" method="GET">
+      <input type="text" name="name" placeholder="Enter full name..." required>
+      <button type="submit">Search 💡</button>
+    </form>
+
+    {% if students %}
+    <div class="result-container">
+    <table class="student-table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Major</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for student in students %}
+        <tr>
+            <td>{{ student.name }}</td>
+            <td>{{ student.age }}</td>
+            <td>{{ student.gender }}</td>
+            <td>{{ student.major }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    {% elif request.args.get('name') %}
+    <p style="color: red; text-align:center;">No student found with that name.</p>
+    {% endif %}
+
+        <div style="text-align:center; margin-top: 20px;">
+          <a href="{{ url_for('exercise3') }}" class="back-link">← Back to Student List</a>
+        </div>
+  </div>
+</body>
+</html>

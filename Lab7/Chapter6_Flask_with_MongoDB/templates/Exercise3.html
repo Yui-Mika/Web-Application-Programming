@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Style.css') }}">
+</head>
+<body>
+    <div class="list-container">
+        <h2>STUDENT LIST</h2>
+
+        <div class="button-group">
+          <a href="{{ url_for('exercise2') }}">
+            <button class="add-button">➕ Add Student</button>
+          </a>
+          <!--This part belong to Exercise 6-->
+          <a href="{{ url_for('exercise6') }}">
+            <button class="search-button">🔍 Search</button>
+          </a>
+          <!--This part belong to Exercise 7-->
+          <a href="{{ url_for('exercise7') }}">
+            <button class="search-button">🌀 Fuzzy Search</button>
+          </a>
+          <!--This part belong to Exercise 8-->
+          <a href="{{ url_for('exercise8') }}">
+            <button class="search-button">🎓 Filter by Major</button>
+          </a>
+          <!--This part belong to Exercise 9-->
+          <a href="{{ url_for('exercise9') }}">
+          <button class="count-button">📊 Count Students per Major</button>
+          </a>
+          <!--This part belong to Exercise 13-->
+          <a href="{{ url_for('exercise13') }}">
+          <button class="add-button">🎓 Filter Excellent Students</button>
+          </a>
+          <!--This part belong to Exercise 14-->
+          <a href="{{ url_for('exercise14') }}">
+          <button class="add-button">🏆 Top GPA Student</button>
+          </a>
+          <!--This part belong to Exercise 15-->
+          <a href="{{ url_for('exercise15') }}">
+          <button class="filter-button">🔍 Filter by Age</button>
+          </a>
+          <!--This part belong to Exercise 16-->
+          <a href="{{ url_for('exercise16') }}">
+              <button class="filter-button">🚻 Filter by Gender</button>
+          </a>
+        </div>
+
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Major</th>
+                    <!--This part belong to Exercise 11-->
+                    <th>GPA</th>
+                    <!--This part belong to Exercise 10-->
+                    <th>Math</th>
+                    <th>Literature</th>
+                    <th>English</th>
+                    <!--This part belong to Exercise 12-->
+                    <th>Rank</th>
+                    <!--This part belong to Exercise 4-->
+                    <th>Edit</th>
+                    <!--This part belong to Exercise 5-->
+                    <th>Delete</th>
+                    
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in students %}
+                <tr>
+                    <td>{{ student.name }}</td>
+                    <td>{{ student.age }}</td>
+                    <td>{{ student.gender }}</td>
+                    <td>{{ student.major }}</td>
+                    <!--This part belong to Exercise 11-->
+                    <td>{{ student.gpa }}</td>
+                    <!--This part belong to Exercise 10-->
+                    <td>{{ student.get('math', 'N/A') }}</td>
+                    <td>{{ student.get('literature', 'N/A') }}</td>
+                    <td>{{ student.get('english', 'N/A') }}</td>
+                    <!--This part belong to Exercise 12-->
+                    <td>{{ student.rank }}</td>
+                    
+
+                    <td>
+                      <a href="{{ url_for('exercise4', student_id=student._id|string) }}">
+                          <button class="edit-button">Edit</button>
+                      </a>
+                    </td>
+                     <td>
+                      <form action="{{ url_for('exercise5', student_id=student._id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this student?');">
+                        <button type="submit" class="delete-button">Delete</button>
+                      </form>
+                    </td>
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

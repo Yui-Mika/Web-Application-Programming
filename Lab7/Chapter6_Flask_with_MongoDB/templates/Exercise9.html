@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Major Counts</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Style.css') }}">
+</head>
+<body>
+    <div class="list-container">
+        <h2>👨‍🎓 Student Count per Major 📊</h2>
+
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Major</th>
+                    <th>Student Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in counts %}
+                <tr>
+                    <td>{{ item._id }}</td>
+                    <td>{{ item.count }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div style="text-align:center; margin-top: 20px;">
+            <a href="{{ url_for('exercise3') }}" class="back-link">← Back to Student List</a>
+        </div>
+    </div>
+</body>
+</html>

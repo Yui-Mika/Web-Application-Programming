@@ -1,0 +1,37 @@
+<!-- templates/search.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Products</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="search-container">
+        <h2>🔍 Search Products</h2>
+        <form method="get" action="{{ url_for('search_product') }}">
+            <input type="text" name="query" placeholder="Enter product name..." required>
+            <button type="submit">Search 🔎</button>
+        </form>
+    </div>
+
+    {% if products %}
+        <div class="product-list">
+            {% for product in products %}
+            <div class="product-card">
+                <img src="{{ product.image }}" alt="{{ product.name }}">
+                <h3>{{ product.name }}</h3>
+                <p>{{ product.description }}</p>
+                <strong>${{ product.price }}</strong>
+            </div>
+            {% endfor %}
+        </div>
+    {% elif query %}
+        <p style="text-align:center;">No matching products found.</p>
+    {% endif %}
+
+    <div class="back-link">
+        <a href="{{ url_for('display_products') }}">🔙 Back to Product List</a>
+    </div>
+</body>
+</html>

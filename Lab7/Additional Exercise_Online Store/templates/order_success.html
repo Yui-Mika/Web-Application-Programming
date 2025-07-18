@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Successful</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="confirmation-box">
+        <h2>✅ Your order has been placed successfully!</h2>
+        <p>Thank you for shopping with us 💖</p>
+
+        <div class="back-link">
+            <a href="{{ url_for('display_products') }}">🛍️ Back to Product List</a>
+        </div>
+    </div>
+</body>
+</html>

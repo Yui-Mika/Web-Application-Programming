@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="cart-container">
+    <h2>🛒 Shopping Cart</h2>
+
+    {% if cart %}
+        <div class="cart-items">
+            {% for item in cart %}
+            <div class="cart-item">
+                <img src="{{ item.image }}" alt="{{ item.name }}">
+                <div class="item-details">
+                    <h4>{{ item.name }}</h4>
+                    <p>${{ item.price }}</p>
+                    <div class="quantity-controls">
+                        <form method="POST" action="{{ url_for('update_quantity', product_id=item.id) }}">
+                            <button type="submit" name="action" value="decrease">➖</button>
+                            <span>{{ item.quantity }}</span>
+                            <button type="submit" name="action" value="increase">➕</button>
+                        </form>
+                    </div>
+                </div>
+                <form method="POST" action="{{ url_for('remove_item', product_id=item.id) }}">
+                    <button class="remove-btn" type="submit">🗑️</button>
+                </form>
+            </div>
+            {% endfor %}
+            <div class="cart-total-box">
+                <span>Total:</span>
+                <strong>${{ total }}</strong>
+            </div>
+
+        </div>
+    {% else %}
+        <p>Your cart is empty 😥</p>
+    {% endif %}
+
+    
+    <form method="POST" action="{{ url_for('place_order') }}">
+        <div class="center">
+        <button type="submit" class="place-order-btn">✅ Place Order</button>
+        </div>
+    </form>
+
+    <div class="back-link">
+        <a href="{{ url_for('display_products') }}">🔙 Back to Products</a>
+    </div>
+</div>
+
+</body>
+</html>

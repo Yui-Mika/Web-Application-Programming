@@ -1,0 +1,33 @@
+<!-- templates/add_product.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Product</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Add New Product 🛒</h2>
+        <form method="POST">
+            <label>Name:</label>
+            <input type="text" name="name" required>
+
+            <label>Description:</label>
+            <input type="text" name="description">
+
+            <label>Price:</label>
+            <input type="number" name="price" step="0.01" required>
+
+            <label>Image URL:</label>
+            <input type="text" name="image" required>
+
+            <button type="submit">Add Product ✅</button>
+        </form>
+
+    </div>
+        <div class="back-link">
+                <a href="{{ url_for('display_products') }}">🛍️ View Product List</a>
+            </div>
+</body>
+</html>
